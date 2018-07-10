@@ -1,7 +1,7 @@
 # Access Azure SQL Database in Java using Azure Key Vault with Managed Service Identity (MSI)
 This applicaiton runs on Azure App Service which supports Managed Service Identity (MSI). It illustrates following concepts -
 
-1.	Addressing unavailability of **Java Package for MSI** (.Net has [Microsoft.Azure.Services.AppAuthentication nuget package](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication))
+1.	Addressing unavailability of **Java Maven Package for MSI** (.Net has [Microsoft.Azure.Services.AppAuthentication nuget package](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication))
 
 2. **Use of REST endpoint for MSI**. When MSI is enabled for App Service, a REST endpoint is created to obtain token. There are 2 environment variables, MSI_ENDPOINT and MSI_SECRET, that are also added in App Service
 
