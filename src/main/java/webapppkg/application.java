@@ -59,6 +59,8 @@ public class application {
 		
 		output = getData(jdbcConnstr);
 		
+		output.put("DBAccessToken", getMSIToeknFromAppServiceForSQL("https://database.windows.net", msiSecret, msiEndpoint));
+		
 		return output;
 	}
 	
@@ -137,7 +139,7 @@ public class application {
 		 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(msiEndpoint)
 				//Help Needed - What should be api-version? I get api-version invalid error when running this code.
-				.queryParam("api-version", "2014-04-01")
+				.queryParam("api-version", "2018-02-01")
 			    .queryParam("resource", targetURL);
 
 		ResponseEntity<String> result = restTemplate.exchange(builder.toUriString(), HttpMethod.GET, httpEntity, String.class);
